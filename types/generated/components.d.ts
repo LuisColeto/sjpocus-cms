@@ -24,11 +24,30 @@ export interface LinksLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SlidesHeroSlide extends Struct.ComponentSchema {
+  collectionName: 'components_slides_hero_slides';
+  info: {
+    displayName: 'Hero Slide';
+    icon: 'picture';
+  };
+  attributes: {
+    cta_label: Schema.Attribute.String;
+    cta_secondary_label: Schema.Attribute.String;
+    cta_secondary_url: Schema.Attribute.String;
+    cta_url: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    tagline: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'buttons.navigation-button': ButtonsNavigationButton;
       'links.link': LinksLink;
+      'slides.hero-slide': SlidesHeroSlide;
     }
   }
 }

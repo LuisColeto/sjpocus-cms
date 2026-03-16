@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "stats_sections",
+  "info": {
+    "singularName": "stats-section",
+    "pluralName": "stats-sections",
+    "displayName": "Seção Stats"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "items": {
+      "type": "component",
+      "component": "stats.stat-item",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

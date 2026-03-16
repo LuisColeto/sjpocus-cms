@@ -743,6 +743,43 @@ export interface ApiNavBarNavBar extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiStatsSectionStatsSection extends Struct.SingleTypeSchema {
+  collectionName: 'stats_sections';
+  info: {
+    displayName: 'Se\u00E7\u00E3o Stats';
+    pluralName: 'stats-sections';
+    singularName: 'stats-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    items: Schema.Attribute.Component<'stats.stat-item', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::stats-section.stats-section'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
   collectionName: 'team_members';
   info: {
@@ -1352,6 +1389,7 @@ declare module '@strapi/strapi' {
       'api::courses-section.courses-section': ApiCoursesSectionCoursesSection;
       'api::hero.hero': ApiHeroHero;
       'api::nav-bar.nav-bar': ApiNavBarNavBar;
+      'api::stats-section.stats-section': ApiStatsSectionStatsSection;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::team-section.team-section': ApiTeamSectionTeamSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;

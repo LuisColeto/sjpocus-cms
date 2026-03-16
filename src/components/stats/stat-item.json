@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_stats_stat_items",
+  "info": {
+    "displayName": "Stat Item",
+    "icon": "chartBar"
+  },
+  "options": {},
+  "attributes": {
+    "icon_name": {
+      "type": "enumeration",
+      "enum": ["Users", "MapPin", "ShieldCheck", "Award", "BookOpen", "Star"]
+    },
+    "value": {
+      "type": "integer",
+      "required": true
+    },
+    "suffix": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -42,12 +42,29 @@ export interface SlidesHeroSlide extends Struct.ComponentSchema {
   };
 }
 
+export interface StatsStatItem extends Struct.ComponentSchema {
+  collectionName: 'components_stats_stat_items';
+  info: {
+    displayName: 'Stat Item';
+    icon: 'chartBar';
+  };
+  attributes: {
+    icon_name: Schema.Attribute.Enumeration<
+      ['Users', 'MapPin', 'ShieldCheck', 'Award', 'BookOpen', 'Star']
+    >;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    suffix: Schema.Attribute.String;
+    value: Schema.Attribute.Integer & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'buttons.navigation-button': ButtonsNavigationButton;
       'links.link': LinksLink;
       'slides.hero-slide': SlidesHeroSlide;
+      'stats.stat-item': StatsStatItem;
     }
   }
 }

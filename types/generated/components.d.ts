@@ -12,6 +12,19 @@ export interface ButtonsNavigationButton extends Struct.ComponentSchema {
   };
 }
 
+export interface GalleryGalleryImage extends Struct.ComponentSchema {
+  collectionName: 'components_gallery_gallery_images';
+  info: {
+    displayName: 'Gallery Image';
+    icon: 'picture';
+  };
+  attributes: {
+    city: Schema.Attribute.String;
+    date: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
 export interface LinksLink extends Struct.ComponentSchema {
   collectionName: 'components_links_links';
   info: {
@@ -62,6 +75,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'buttons.navigation-button': ButtonsNavigationButton;
+      'gallery.gallery-image': GalleryGalleryImage;
       'links.link': LinksLink;
       'slides.hero-slide': SlidesHeroSlide;
       'stats.stat-item': StatsStatItem;

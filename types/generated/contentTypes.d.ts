@@ -654,6 +654,50 @@ export interface ApiCoursesSectionCoursesSection
   };
 }
 
+export interface ApiGallerySectionGallerySection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'gallery_sections';
+  info: {
+    displayName: 'Se\u00E7\u00E3o Galeria';
+    pluralName: 'gallery-sections';
+    singularName: 'gallery-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    images: Schema.Attribute.Component<'gallery.gallery-image', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::gallery-section.gallery-section'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHeroHero extends Struct.SingleTypeSchema {
   collectionName: 'heroes';
   info: {
@@ -1387,6 +1431,7 @@ declare module '@strapi/strapi' {
       'api::certification.certification': ApiCertificationCertification;
       'api::course.course': ApiCourseCourse;
       'api::courses-section.courses-section': ApiCoursesSectionCoursesSection;
+      'api::gallery-section.gallery-section': ApiGallerySectionGallerySection;
       'api::hero.hero': ApiHeroHero;
       'api::nav-bar.nav-bar': ApiNavBarNavBar;
       'api::stats-section.stats-section': ApiStatsSectionStatsSection;

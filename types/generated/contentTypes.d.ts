@@ -497,6 +497,62 @@ export interface ApiCertificationCertification extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiContactSectionContactSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'contact_sections';
+  info: {
+    displayName: 'Se\u00E7\u00E3o Contato';
+    pluralName: 'contact-sections';
+    singularName: 'contact-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    links: Schema.Attribute.Component<'contact.contact-link', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-section.contact-section'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   collectionName: 'courses';
   info: {
@@ -1666,6 +1722,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::certification.certification': ApiCertificationCertification;
+      'api::contact-section.contact-section': ApiContactSectionContactSection;
       'api::course.course': ApiCourseCourse;
       'api::courses-section.courses-section': ApiCoursesSectionCoursesSection;
       'api::gallery-section.gallery-section': ApiGallerySectionGallerySection;

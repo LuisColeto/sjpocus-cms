@@ -12,6 +12,31 @@ export interface ButtonsNavigationButton extends Struct.ComponentSchema {
   };
 }
 
+export interface ContactContactLink extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_links';
+  info: {
+    displayName: 'Contact Link';
+    icon: 'link';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    icon_name: Schema.Attribute.Enumeration<
+      [
+        'Phone',
+        'Mail',
+        'AtSign',
+        'Instagram',
+        'Linkedin',
+        'Youtube',
+        'Facebook',
+      ]
+    >;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface GalleryGalleryImage extends Struct.ComponentSchema {
   collectionName: 'components_gallery_gallery_images';
   info: {
@@ -75,6 +100,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'buttons.navigation-button': ButtonsNavigationButton;
+      'contact.contact-link': ContactContactLink;
       'gallery.gallery-image': GalleryGalleryImage;
       'links.link': LinksLink;
       'slides.hero-slide': SlidesHeroSlide;

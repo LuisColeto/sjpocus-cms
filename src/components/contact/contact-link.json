@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_contact_contact_links",
+  "info": {
+    "displayName": "Contact Link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "icon_name": {
+      "type": "enumeration",
+      "enum": ["Phone", "Mail", "AtSign", "Instagram", "Linkedin", "Youtube", "Facebook"]
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

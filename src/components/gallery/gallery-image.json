@@ -17,6 +17,11 @@
     },
     "date": {
       "type": "string"
+    },
+    "album_images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
     }
   },
   "config": {}

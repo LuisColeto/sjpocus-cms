@@ -44,6 +44,7 @@ export interface GalleryGalleryImage extends Struct.ComponentSchema {
     icon: 'picture';
   };
   attributes: {
+    album_images: Schema.Attribute.Media<'images', true>;
     city: Schema.Attribute.String;
     date: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;

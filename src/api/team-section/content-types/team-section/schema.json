@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "team_sections",
+  "info": {
+    "singularName": "team-section",
+    "pluralName": "team-sections",
+    "displayName": "Seção Equipe"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "description": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}

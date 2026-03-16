@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Curso"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "subtitle": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": ["basic", "intermediate", "advanced"],
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "duration": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "icon_name": {
+      "type": "enumeration",
+      "enum": ["BookOpen", "BadgeCheck", "Stethoscope", "Wind", "Droplets", "GraduationCap"],
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": ["emerald", "sky", "rose", "cyan", "indigo", "amber", "violet"],
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "cta_label": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "cta_url": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "sort_order": {
+      "type": "integer",
+      "pluginOptions": { "i18n": { "localized": false } }
+    }
+  }
+}

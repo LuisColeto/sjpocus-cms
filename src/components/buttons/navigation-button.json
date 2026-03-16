@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_buttons_navigation_buttons",
+  "info": {
+    "displayName": "Navigation Button",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "button_text": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

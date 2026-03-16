@@ -1,0 +1,34 @@
+import type { Schema, Struct } from '@strapi/strapi';
+
+export interface ButtonsNavigationButton extends Struct.ComponentSchema {
+  collectionName: 'components_buttons_navigation_buttons';
+  info: {
+    displayName: 'Navigation Button';
+    icon: 'cursor';
+  };
+  attributes: {
+    button_text: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+  };
+}
+
+export interface LinksLink extends Struct.ComponentSchema {
+  collectionName: 'components_links_links';
+  info: {
+    displayName: 'Link';
+    icon: 'link';
+  };
+  attributes: {
+    link_text: Schema.Attribute.String;
+    link_url: Schema.Attribute.String;
+  };
+}
+
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
+      'buttons.navigation-button': ButtonsNavigationButton;
+      'links.link': LinksLink;
+    }
+  }
+}

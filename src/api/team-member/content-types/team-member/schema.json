@@ -17,22 +17,40 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
     },
     "specialty": {
       "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "photo": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
       "multiple": false,
-      "allowedTypes": ["images"],
-      "pluginOptions": { "i18n": { "localized": false } }
+      "allowedTypes": [
+        "images"
+      ]
     },
     "sort_order": {
       "type": "integer",
-      "pluginOptions": { "i18n": { "localized": false } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }

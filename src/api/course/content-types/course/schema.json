@@ -65,6 +65,18 @@
     "sort_order": {
       "type": "integer",
       "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "objectives": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "requirements": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "content_outline": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }

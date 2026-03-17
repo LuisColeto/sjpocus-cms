@@ -1009,6 +1009,12 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    content: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1030,6 +1036,12 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
       'api::publication.publication'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    reading_time: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     sort_order: Schema.Attribute.Integer &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

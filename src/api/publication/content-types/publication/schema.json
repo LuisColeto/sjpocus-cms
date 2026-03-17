@@ -45,6 +45,14 @@
     "sort_order": {
       "type": "integer",
       "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "content": {
+      "type": "blocks",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "reading_time": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": false } }
     }
   }
 }

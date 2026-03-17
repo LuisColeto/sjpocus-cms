@@ -18,12 +18,6 @@
     "heading": {
       "type": "string",
       "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "images": {
-      "type": "component",
-      "component": "gallery.gallery-image",
-      "repeatable": true,
-      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }

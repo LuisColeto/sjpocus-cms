@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gallery_items",
+  "info": {
+    "singularName": "gallery-item",
+    "pluralName": "gallery-items",
+    "displayName": "Gallery Item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "album_images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"],
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "date": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "city": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "sort_order": {
+      "type": "integer",
+      "pluginOptions": { "i18n": { "localized": false } }
+    }
+  }
+}

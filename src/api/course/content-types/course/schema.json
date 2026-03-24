@@ -20,6 +20,12 @@
       "required": true,
       "pluginOptions": { "i18n": { "localized": true } }
     },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
     "subtitle": {
       "type": "string",
       "pluginOptions": { "i18n": { "localized": true } }

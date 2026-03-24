@@ -1,4 +1,5 @@
 import type { Core } from "@strapi/strapi";
+import { Resend } from "resend";
 
 const controller = ({ strapi }: { strapi: Core.Strapi }) => ({
   async send(ctx) {
@@ -14,8 +15,11 @@ const controller = ({ strapi }: { strapi: Core.Strapi }) => ({
     }
 
     try {
-      await strapi.plugin("email").service("email").send({
-        to: process.env.SMTP_USER,
+      const resend = new Resend(process.env.RESEND_API_KEY);
+
+      await resend.emails.send({
+        from: `SJPocus <${process.env.RESEND_FROM_EMAIL}>`,
+        to: process.env.CONTACT_EMAIL!,
         replyTo: email,
         subject: `[SJPocus] Novo contato de ${name}`,
         html: `

@@ -653,6 +653,13 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     sort_order: Schema.Attribute.Integer &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1040,6 +1047,13 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
+        };
+      }>;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
         };
       }>;
     sort_order: Schema.Attribute.Integer &
